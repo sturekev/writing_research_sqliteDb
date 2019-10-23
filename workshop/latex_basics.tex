@@ -1,0 +1,140 @@
+\documentclass[11pt]{sigplanconf}
+
+\usepackage{hyperref}  % need this for links
+\usepackage{graphicx}  % need this for images
+\usepackage{listings}  % need this for code
+
+% Preamble
+% Metadata
+\title{Writing in the Major Lab (CS~296)}
+\authorinfo{Roman Yasinovskyy}{Luther College}{roman@luther.edu}
+\date{\today}
+\copyrightdoi{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\begin{abstract}
+
+    This document describes basic tools and elements of \LaTeX one needs to start working on a paper. Many elements of the style are specified in the SIGPLAN class file\cite{SIGPLANL45:online} and \LaTeX fundamentals are described in the \textit{Learn \LaTeX in 30 minutes} on Overleaf\cite{LearnLaT95:online}.
+
+\end{abstract}
+
+\section{Tools}
+
+\subsection{tex-live}
+
+You are going to need \texttt{tex-live} package to work with \LaTeX. \texttt{tex-live} is a multi-platform \TeX document production system \cite{TeXLiveT67:online}. It comes packed with various tools and you may use command line to compile your file, but you can also use GUI tools like \textit{TeXShop} (macOS), \textit{Kile} (multi-platform), \textit{Texmaker} (multi-platform), or \textit{LaTeX Workshop} for \textit{VS Code}.
+
+\begin{verbatim}
+    sudo apt install tex-live
+\end{verbatim}
+
+\subsection{Kile}
+
+\textit{Kile} is an IDE for \LaTeX that allows you to compile, convert, and preview your document\cite{KileanIn6:online}.
+
+\begin{verbatim}
+    sudo apt install kile
+\end{verbatim}
+
+\subsection{LaTeX Workshop for VS Code}
+
+If you prefer \textit{VS Code} to write code, install the \textit{LaTeX Workshop} extension to write your \LaTeX, build (compile) it, and generate (preview) the resulting PDF.
+
+\subsection{Lucid chart}
+
+While professional tools like \textit{OmniGraffle} (macOS) or \textit{Visio} (Windows) are usually used to create diagrams, \textit{Lucid chart}\cite{OnlineDi2:online} should be sufficient for the purposes of this paper and it is free. You should not include photos in your paper but rather draw diagrams and generate charts\footnote{Use \textit{Excel} or \textit{Spreadsheets} for charts}.
+
+\section{Structure}
+
+The main goal of this course if for you write a scientific paper while using proper tools and methods. Your paper is going to be a survey/review of existing sources and should not exceed 5 pages.
+
+Sections of the paper should include at least the following sections:
+
+\begin{itemize}
+    \item Introduction
+    \item History of the subject
+    \item Prominent features
+    \item Conclusion
+    \item References
+\end{itemize}
+
+\section{Timeline}
+
+You are expected to stick to the schedule specified on KATIE\ref{tbl:schedule}.
+
+\section{Advanced elements}
+
+\subsection{Math}
+
+Your paper may include mathematical formulas. They can appear \textit{inline} (e.g. \begin{math}i^2=-1\end{math} or $E=mc^2$) or in \textit{display} mode.
+
+\begin{equation}
+    F = G \frac{m_1 m_2}{r^2}
+\end{equation}
+
+or
+
+$$a^2 + b^2 = c^2$$
+
+\subsection{Code}
+
+An easy way to include code is to use package \texttt{listings} and have your code in a separate file. Other options (e.g. package \texttt{minted}) are acceptable too but may require additional tools.
+
+\lstinputlisting[language=Python]{panda.py}
+
+You can also include code in the body of your document.
+
+\begin{lstlisting}[language=Python, numbers=left, numberstyle=\tiny]
+    def hello():
+        print("Hello, Panda")
+    
+\end{lstlisting}
+
+\subsection{Image}
+
+An image\ref{fig:panda1} or a chart can be inserted into the document.
+
+\begin{figure}[!htbp]
+    \includegraphics[width=0.4\textwidth]{panda.png}
+    \caption{Panda}
+    \label{fig:panda1}
+
+\end{figure}
+
+\subsection{Fancy text}
+
+Text \reflectbox{reflected} horizontally.
+Text \scalebox{1}[-1]{reflected} vertically.
+
+\bibliographystyle{unsrtnat}
+\bibliography{latex_sources}
+
+\section*{Appendix A}
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|c|}
+        \hline
+        Task                 & Week \\
+        \hline
+        \LaTeX seminar       & 1    \\
+        Select a topic       & 1    \\
+        Meet the librarian   & 2    \\
+        Identify the sources & 2    \\
+        Outline              & 3    \\
+        First draft          & 4    \\
+        Meet the instructor  & 6    \\
+        Final draft          & 7    \\
+        Presentation         & 8    \\
+        \hline
+    \end{tabular}
+    \caption{Tentative schedule}
+    \label{tbl:schedule}
+\end{table}
+
+\end{document}
