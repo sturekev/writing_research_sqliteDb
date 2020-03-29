@@ -1,0 +1,153 @@
+\documentclass[11pt]{article}
+
+\usepackage{hyperref}  % links
+\usepackage{graphicx}  % images
+\usepackage{listings}  % code
+\usepackage{authblk}  % author info
+\usepackage{biblatex}  % bibliography
+
+\addbibresource{sources.bib}
+
+% Preamble
+% Metadata
+\title{Writing in the Major Lab (CS~296)}
+\author{Roman Yasinovskyy}
+\affil{
+Department of Computer Science\\
+Luther College\\
+Decorah, IA 52101\\
+roman@luther.edu
+}
+\date{\today}
+
+% Document body
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\begin{abstract}
+
+    This document describes basic tools and elements of \LaTeX one needs to start working on a paper. \LaTeX fundamentals are described in the \emph{Learn \LaTeX in 30 minutes} on Overleaf\cite{OverleafTutorial:online}.
+
+\end{abstract}
+
+\section{Tools}
+
+\subsection{tex-live}
+
+You are going to need \texttt{tex-live} package to work with \LaTeX. \texttt{tex-live} is a multi-platform \TeX document production system \cite{TeXLive:online}. It comes packed with various tools and you may use command line to compile your file. You can also use GUI tools like \emph{TeXShop} (macOS), \emph{Kile}\cite{Kile:online} (multi-platform), \emph{Texmaker} (multi-platform), or \emph{LaTeX Workshop}\cite{LaTeXWorkshop:online} for \emph{VS Code}.
+
+\begin{lstlisting}[caption=Installing tex-live, captionpos=b, frame=trbl]
+sudo apt install tex-live
+\end{lstlisting}
+
+\subsection{Kile}
+
+\emph{Kile} is an IDE for \LaTeX that allows you to compile, convert, and preview your document.
+
+\begin{lstlisting}[caption=Installing Kile, captionpos=b, frame=trbl]
+sudo apt install kile
+\end{lstlisting}
+
+\subsection{LaTeX Workshop for VS Code}
+
+If you prefer \emph{VS Code} to write code, install the \emph{LaTeX Workshop} extension to write your \LaTeX, build (compile) it, and generate (preview) the resulting PDF.
+
+\subsection{Lucid chart}
+
+While professional tools like \emph{OmniGraffle} (macOS) or \emph{Visio} (Windows) are usually used to create diagrams, \emph{Lucid chart}\cite{LucidChart:online} should be sufficient for the purposes of this paper and it is free. You should not include photos in your paper but rather draw diagrams and generate charts\footnote{Use \emph{Excel} or \emph{Spreadsheets} for charts}.
+
+\section{Structure}
+
+The main goal of this course if for you write a scientific paper while using proper tools and methods. Your paper is going to be a survey/review of existing sources and should not exceed 7 pages.
+
+Sections of the paper should include at least the following sections:
+
+\begin{itemize}
+    \item Introduction
+    \item History of the subject
+    \item Prominent features
+    \item Conclusion
+    \item References
+\end{itemize}
+
+\section{Timeline}
+
+You are expected to stick to the schedule specified on KATIE (see Table~\ref{tbl:schedule} in the Appendix).
+
+\section{Advanced elements}
+
+\subsection{Math}
+
+Your paper may include mathematical formulas. They can appear \emph{inline} (e.g. \begin{math}i^2=-1\end{math} or \(E=mc^2\)) or in \emph{display} mode.
+
+% Numbered equation
+\begin{equation}
+    F = G \frac{m_1 m_2}{r^2}
+\end{equation}
+
+or
+
+\[a^2 + b^2 = c^2\]
+
+\subsection{Code}
+
+An easy way to include code is to use package \texttt{listings} and have your code in a separate file. Other options (e.g. package \texttt{minted}) are acceptable too but may require additional tools.
+
+\lstinputlisting[language=Python, numbers=left, numberstyle=\tiny, caption=\texttt{hello} from file, captionpos=b, frame=trbl]{panda.py}
+
+\noindent You can also include code in the body of your document.
+
+\begin{lstlisting}[language=Python, caption=\texttt{hello} inline and with different options, captionpos=b, frame=trbl, showstringspaces=false]
+def hello():
+    print("Hello, Panda")
+    
+\end{lstlisting}
+
+\subsection{Image}
+
+An image (see Figure~\ref{fig:panda1}) or a chart can be inserted into the document.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{panda.png}
+    \caption{Panda}
+    \label{fig:panda1}
+
+\end{figure}
+
+\subsection{Fancy text}
+
+Text \reflectbox{reflected} horizontally.
+Text \scalebox{1}[-1]{reflected} vertically.
+
+\printbibliography
+
+\clearpage
+\section*{Appendix A}
+
+\begin{table}[!htbp]
+    \centering
+    \begin{tabular}{|l|c|c|}
+        \hline
+        Task                 & Week & Points \\
+        \hline
+        \LaTeX seminar       & 1    & 5      \\
+        Select a topic       & 1    & 10     \\
+        Meet the librarian   & 2    & 5      \\
+        Identify the sources & 2    & 10     \\
+        Outline              & 3    & 10     \\
+        First draft          & 4    & 20     \\
+        Meet the instructor  & 5    & 0      \\
+        Final draft          & 7    & 20     \\
+        Presentation         & 8    & 10     \\
+        Full paper           & 8    & 10     \\
+        \hline
+    \end{tabular}
+    \caption{Tentative schedule}
+    \label{tbl:schedule}
+\end{table}
+
+\end{document}
