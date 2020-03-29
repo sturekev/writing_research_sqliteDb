@@ -29,7 +29,7 @@ roman@luther.edu
 
 \begin{abstract}
 
-    This document describes basic tools and elements of \LaTeX one needs to start working on a paper. \LaTeX fundamentals are described in the \emph{Learn \LaTeX in 30 minutes} on Overleaf\cite{OverleafTutorial:online}.
+    This document describes basic tools and elements of \LaTeX\ one needs to start working on a paper. \LaTeX\ fundamentals are described in \cite{OverleafTutorial:online} and \cite{oetiker1995not}.
 
 \end{abstract}
 
@@ -37,7 +37,7 @@ roman@luther.edu
 
 \subsection{tex-live}
 
-You are going to need \texttt{tex-live} package to work with \LaTeX. \texttt{tex-live} is a multi-platform \TeX document production system \cite{TeXLive:online}. It comes packed with various tools and you may use command line to compile your file. You can also use GUI tools like \emph{TeXShop} (macOS), \emph{Kile}\cite{Kile:online} (multi-platform), \emph{Texmaker} (multi-platform), or \emph{LaTeX Workshop}\cite{LaTeXWorkshop:online} for \emph{VS Code}.
+You are going to need \texttt{tex-live} package to work with \LaTeX. It is a multi-platform \TeX\ document production system\cite{TeXLive:online} that comes packed with various tools you may use to compile your file. You can also use GUI tools like \emph{TeXShop} (macOS), \emph{Kile} (multi-platform), \emph{Texmaker} (multi-platform), or \emph{LaTeX Workshop} for \emph{VS Code}.
 
 \begin{lstlisting}[caption=Installing tex-live, captionpos=b, frame=trbl]
 sudo apt install tex-live
@@ -45,7 +45,7 @@ sudo apt install tex-live
 
 \subsection{Kile}
 
-\emph{Kile} is an IDE for \LaTeX that allows you to compile, convert, and preview your document.
+\emph{Kile} is an IDE for \LaTeX\ that allows you to compile, convert, and preview your document.
 
 \begin{lstlisting}[caption=Installing Kile, captionpos=b, frame=trbl]
 sudo apt install kile
@@ -57,13 +57,13 @@ If you prefer \emph{VS Code} to write code, install the \emph{LaTeX Workshop} ex
 
 \subsection{Lucid chart}
 
-While professional tools like \emph{OmniGraffle} (macOS) or \emph{Visio} (Windows) are usually used to create diagrams, \emph{Lucid chart}\cite{LucidChart:online} should be sufficient for the purposes of this paper and it is free. You should not include photos in your paper but rather draw diagrams and generate charts\footnote{Use \emph{Excel} or \emph{Spreadsheets} for charts}.
+While professional tools like \emph{OmniGraffle} (macOS) or \emph{Visio} (Windows) are usually used to create diagrams, \emph{Lucid chart} should be sufficient for the purposes of this paper and it is free. You should not include photos in your paper but rather draw diagrams and generate charts\footnote{Use \emph{Excel} or \emph{Spreadsheets} for charts}.
 
 \section{Structure}
 
-The main goal of this course if for you write a scientific paper while using proper tools and methods. Your paper is going to be a survey/review of existing sources and should not exceed 7 pages.
+The main goal of this course if for you write a scientific paper while using proper tools and methods. Your paper is going to be a survey/review of existing sources and should not exceed 7 pages. You should use class \emph{article}.
 
-Sections of the paper should include at least the following sections:
+The paper should include at least the following sections:
 
 \begin{itemize}
     \item Introduction
@@ -117,11 +117,6 @@ An image (see Figure~\ref{fig:panda1}) or a chart can be inserted into the docum
     \label{fig:panda1}
 
 \end{figure}
-
-\subsection{Fancy text}
-
-Text \reflectbox{reflected} horizontally.
-Text \scalebox{1}[-1]{reflected} vertically.
 
 \printbibliography
 
