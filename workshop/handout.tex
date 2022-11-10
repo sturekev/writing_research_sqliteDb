@@ -1,43 +1,46 @@
-\documentclass[11pt]{article}
+\documentclass[nonacm]{acmart}
 
-\usepackage{hyperref}  % links
-\usepackage{graphicx}  % images
+% Packages
+\usepackage{hyperref}
 \usepackage{listings}  % code
-\usepackage{authblk}  % author info
-\usepackage{biblatex}  % bibliography
-
-\addbibresource{sources.bib}
+% \usepackage{lastpage}
 
 % Preamble
 % Metadata
-\title{Writing in the Major Lab (CS~296)}
+\title{Writing in the Major Lab (CS\ 296)}
+
 \author{Roman Yasinovskyy}
-\affil{
-Department of Computer Science\\
-Luther College\\
-Decorah, IA 52101\\
-roman@luther.edu
+\email{roman@luther.edu}
+\affiliation{
+	\institution{Luther College}
+	\streetaddress{700 College Dr}
+	\city{Decorah}
+	\state{Iowa}
+	\country{United States}
+	\postcode{52101}
 }
+
 \date{\today}
 
 % Document body
 \begin{document}
 
+% Abstract
+\begin{abstract}
+
+    This document describes basic tools and elements of \LaTeX\ one needs to start working on a paper. \LaTeX\ fundamentals are described in \cite{OverleafTutorial} and \cite{oetiker1995not}.
+
+\end{abstract}
+
 \maketitle
 
 \tableofcontents
-
-\begin{abstract}
-
-    This document describes basic tools and elements of \LaTeX\ one needs to start working on a paper. \LaTeX\ fundamentals are described in \cite{OverleafTutorial:online} and \cite{oetiker1995not}.
-
-\end{abstract}
 
 \section{Tools}
 
 \subsection{tex-live}
 
-You are going to need \texttt{tex-live} package to work with \LaTeX. It is a multi-platform \TeX\ document production system\cite{TeXLive:online} that comes packed with various tools you may use to compile your file. You can also use GUI tools like \emph{TeXShop} (macOS), \emph{Kile} (multi-platform), \emph{Texmaker} (multi-platform), or \emph{LaTeX Workshop} for \emph{VS Code}.
+You are going to need \texttt{tex-live} package to work with \LaTeX. It is a multi-platform \TeX\ document production system\cite{TeXLive} that comes packed with various tools you may use to compile your file. You can also use GUI tools like \emph{TeXShop} (macOS), \emph{Kile} (multi-platform), \emph{Texmaker} (multi-platform), or \emph{LaTeX Workshop} for \emph{VS Code}.
 
 \begin{lstlisting}[caption=Installing tex-live, captionpos=b, frame=trbl]
 sudo apt install tex-live
@@ -108,24 +111,32 @@ def hello():
 
 \subsection{Image}
 
-An image (see Figure~\ref{fig:panda1}) or a chart can be inserted into the document.
+An image (see Figure~\ref{fig:panda}) or a chart can be inserted into the document.
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.4\textwidth]{panda.png}
+    \Description{Panda}
     \caption{Panda}
-    \label{fig:panda1}
-
+    \label{fig:panda}
 \end{figure}
 
-\printbibliography
+\subsection{Fancy text}
+
+Text \reflectbox{reflected} horizontally.
+Text \scalebox{1}[-1]{reflected} vertically.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sources}
 
 \clearpage
 \section*{Appendix A}
 
 \begin{table}[!htbp]
     \centering
-    \begin{tabular}{|l|c|c|}
+    \caption{Tentative schedule}
+    \label{tbl:schedule}
+    \begin{tabular}{l c c}
         \hline
         Task                 & Week & Points \\
         \hline
@@ -140,8 +151,6 @@ An image (see Figure~\ref{fig:panda1}) or a chart can be inserted into the docum
         Presentation         & 8    & 20     \\
         \hline
     \end{tabular}
-    \caption{Tentative schedule}
-    \label{tbl:schedule}
 \end{table}
 
 \end{document}
