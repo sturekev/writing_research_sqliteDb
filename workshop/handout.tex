@@ -35,7 +35,7 @@
 
 \maketitle
 
-\tableofcontents
+% \tableofcontents
 
 \section{Tools}
 
@@ -72,6 +72,8 @@ While professional tools like \emph{OmniGraffle} (macOS) or \emph{Visio}
 sufficient for the purposes of this paper and it is free. You should not
 include photos in your paper but rather draw diagrams and generate
 charts\footnote{Use \emph{Excel} or \emph{Spreadsheets} for charts}.
+
+\enlargethispage{2\baselineskip}
 
 \section{Structure}
 
@@ -116,7 +118,13 @@ An easy way to include code is to use package \texttt{listings} and have your
 code in a separate file. Other options (e.g. package \texttt{minted}) are
 acceptable too but may require additional tools.
 
-\lstinputlisting[language=Python, numbers=left, numberstyle=\tiny, caption=\texttt{hello} from file, captionpos=b, frame=trbl]{panda.py}
+\lstinputlisting[language=Python,
+                 numbers=left,
+                 numberstyle=\tiny,
+                 caption=\texttt{hello} from file,
+                 captionpos=b,
+                 frame=trbl]
+                 {panda.py}
 
 \noindent You can also include code in the body of your document.
 
@@ -133,11 +141,13 @@ document.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.4\textwidth]{panda.png}
+    \includegraphics[width=0.3\textwidth]{panda.png}
     \Description{Panda}
     \caption{Panda}
     \label{fig:panda}
 \end{figure}
+
+\clearpage
 
 \subsection{Fancy text}
 
@@ -157,17 +167,17 @@ vertically.
     \label{tbl:schedule}
     \begin{tabular}{l c c}
         \hline
-        Task                 & Week & Points \\
+        Task                    & Week & Points \\
         \hline
-        \LaTeX seminar       & 1    & 5      \\
-        Select a topic       & 1    & 10     \\
-        Meet the librarian   & 2    & 5      \\
-        Identify the sources & 2    & 10     \\
-        Outline              & 3    & 10     \\
-        First draft          & 4    & 20     \\
-        Meet the instructor  & 5    & 0      \\
-        Final draft          & 7    & 20     \\
-        Presentation         & 8    & 20     \\
+        Watch \LaTeX video      & 1    & 5      \\
+        Propose the topic       & 1    & 10     \\
+        Discover library        & 2    & 5      \\
+        Find the sources        & 2    & 10     \\
+        Prepare the outline     & 3    & 10     \\
+        Submit the first draft  & 4    & 25     \\
+        Meet the instructor     & 5    & 5      \\
+        Submit the final draft  & 7    & 20     \\
+        Present the paper       & 8    & 10     \\
         \hline
     \end{tabular}
 \end{table}

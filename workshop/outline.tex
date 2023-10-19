@@ -1,0 +1,78 @@
+%% See examples in the acmart-primary.zip/samples for details
+\documentclass[nonacm]{acmart}
+
+%% Packages %%
+\usepackage{blindtext}
+
+%% Preamble %%
+%% Metadata %%
+\title{Writing in the Major Lab (CS\ 296)}
+
+\author{Roman Yasinovskyy}
+\email{roman@luther.edu}
+\affiliation{
+    \institution{Luther College}
+    \streetaddress{700 College Dr}
+    \city{Decorah}
+    \state{Iowa}
+    \country{United States}
+    \postcode{52101}
+}
+
+\date{\today}
+
+%% Document body %%
+\begin{document}
+
+%% Abstract. Must be before \maketitle is called %%
+\begin{abstract}
+
+    \blindtext
+    \nocite{ACMMasterTemplate}
+    \nocite{OverleafTutorial}
+    \nocite{oetiker1995not}
+    \nocite{Kile}
+    \nocite{LaTeXTutorial}
+    % \nocite{LaTeXWiki}
+    % \nocite{LaTeXWorkshop}
+    \nocite{LucidChart}
+    % \nocite{OverleafHref}
+    \nocite{PaperGuide}
+    \nocite{TeXLive}
+    \nocite{Texmaker}
+
+\end{abstract}
+
+\maketitle
+
+% \tableofcontents
+
+\section{Tools}
+
+\subsection{tex-live}
+
+\subsection{Kile}
+
+\subsection{LaTeX Workshop for VS Code}
+
+\subsection{Lucid chart}
+
+\section{Structure}
+
+\section{Timeline}
+
+\section{Advanced elements}
+
+\subsection{Math}
+
+\subsection{Code}
+
+\subsection{Image}
+
+\subsection{Fancy text}
+
+%% Bibliography. Must be just before the end of the document %%
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sources}
+
+\end{document}
